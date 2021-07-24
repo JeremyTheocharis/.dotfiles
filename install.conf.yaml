@@ -3,5 +3,12 @@
 - link:
     ~/.gitconfig: gitconfig
     ~/.vimrc: vimrc
+    ~/.vim_runtime: vim_runtime
+    ~/.vim: vim
+    ~/.fonts: fonts
+
+- shell:
+  - dconf load /org/gnome/terminal/legacy/profiles:/ < gnome-terminal-profiles.dconf
+  - fc-cache -f -v
 
 
