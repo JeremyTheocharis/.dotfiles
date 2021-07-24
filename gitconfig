@@ -1,0 +1,6 @@
+[user]
+	name = JeremyTheocharis
+	email = jt@umh.app
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
