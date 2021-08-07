@@ -10,10 +10,18 @@ call plug#begin('~/.vim/plugged')
 
 call plug#begin()
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'vimwiki/vimwiki'
+Plug 'tpope/vim-rhubarb'
+" Plug 'davidhalter/jedi-vim'
+Plug 'lervag/vimtex'
+" -------------------------------------------------------
+"  AUTOCOMPLETION
+" ----------------------------------------------------------
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build' }
+Plug 'josa42/vim-lightline-coc'
 call plug#end()
 
 :set number
@@ -23,6 +31,15 @@ let g:solarized_termcolors=16
 set t_Co=16 
 set background=dark
 colorscheme solarized
+
+let g:lightline = {
+  \   'active': {
+  \     left': [[  'coc_info', 'coc_hints', 'coc_errors', 'coc_warnings', 'coc_ok' ], [ 'coc_status'  ]]
+  \   }
+  \ }
+
+" register compoments:
+call lightline#coc#register()
 
 " VIMWIKI
 let g:vimwiki_list = [{'path': '~/OneDrive/vimwiki/',
