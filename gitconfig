@@ -1,6 +1,9 @@
 [user]
 	name = JeremyTheocharis
 	email = jt@umh.app
+	signingkey = 0xE79460B0310434E9
 [credential "https://github.com"]
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
+[commit]
+	gpgsign = true

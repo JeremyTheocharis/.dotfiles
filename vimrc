@@ -16,6 +16,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'tpope/vim-rhubarb'
 " Plug 'davidhalter/jedi-vim'
 Plug 'lervag/vimtex'
+ 
 " -------------------------------------------------------
 "  AUTOCOMPLETION
 " ----------------------------------------------------------
@@ -31,15 +32,6 @@ let g:solarized_termcolors=16
 set t_Co=16 
 set background=dark
 colorscheme solarized
-
-let g:lightline = {
-  \   'active': {
-  \     left': [[  'coc_info', 'coc_hints', 'coc_errors', 'coc_warnings', 'coc_ok' ], [ 'coc_status'  ]]
-  \   }
-  \ }
-
-" register compoments:
-call lightline#coc#register()
 
 " VIMWIKI
 let g:vimwiki_list = [{'path': '~/OneDrive/vimwiki/',
