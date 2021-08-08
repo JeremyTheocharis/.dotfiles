@@ -12,7 +12,7 @@ call plug#begin()
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
-Plug 'vimwiki/vimwiki'
+" Plug 'vimwiki/vimwiki'
 Plug 'tpope/vim-rhubarb'
 " Plug 'davidhalter/jedi-vim'
 Plug 'lervag/vimtex'
@@ -23,6 +23,7 @@ Plug 'lervag/vimtex'
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build' }
 Plug 'josa42/vim-lightline-coc'
+Plug 'SidOfc/mkdx'
 call plug#end()
 
 :set number
@@ -39,6 +40,8 @@ let g:vimwiki_list = [{'path': '~/OneDrive/vimwiki/',
 
 " https://github.com/vimwiki/vimwiki/issues/845
 au filetype vimwiki silent! iunmap <buffer> <Tab>
+
+let g:mkdx#settings = { 'map': { 'prefix': '<leader><leader>' } }
 
 " TIMESTAMP with F3"
 nmap <F3> a<C-R>=strftime("%FT%T%z")<CR> 
