@@ -77,7 +77,7 @@ let g:mkdx#settings = { 'map': { 'prefix': '<leader><leader>' } }
 
 " Show Booksmarks on Startup
 let NERDTreeShowBookmarks=1
-au VimEnter *  NERDTree
+" au VimEnter *  NERDTree
 
 " FZF
 
