@@ -3,7 +3,6 @@
 - link:
     ~/.gitconfig: gitconfig
     ~/.vimrc: vimrc
-    ~/.vim_runtime: vim_runtime
     ~/.vim: vim
     ~/.fonts: fonts
 
