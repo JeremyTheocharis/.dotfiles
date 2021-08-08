@@ -77,12 +77,16 @@ let g:mkdx#settings = { 'map': { 'prefix': '<leader><leader>' } }
 
 " Show Booksmarks on Startup
 let NERDTreeShowBookmarks=1
+let NERDTreeChDirMode=2
+
+" https://stackoverflow.com/questions/2066590/automatically-quit-vim-if-nerdtree-is-last-and-only-buffer
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " au VimEnter *  NERDTree
 
 " FZF
-
 nnoremap <silent> <C-f> :GFiles<CR>
 nnoremap <silent> <Leader>f :Rg<CR>
+
 
 
 catch
