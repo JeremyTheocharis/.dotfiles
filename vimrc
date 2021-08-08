@@ -36,6 +36,10 @@ Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build' }
 Plug 'josa42/vim-lightline-coc'
 Plug 'SidOfc/mkdx'
+" Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
 call plug#end()
 
 source ~/.vim/coc-default.vim
@@ -55,12 +59,6 @@ set t_Co=16
 set background=dark
 colorscheme solarized
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Command mode related
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Smart mappings on the command line
-cno $h e ~/OneDrive/vimwiki
-
 """"""""""""""""""""""""""""""
 " => Personal changes
 """"""""""""""""""""""""""""""
@@ -70,12 +68,21 @@ cno $h e ~/OneDrive/vimwiki
 nmap <F3> a<C-R>=strftime("%FT%T%z")<CR> 
 
 " Quickly open a markdown buffer for scribble
-map <leader>x :e ~/buffer.md<cr>
+let g:vimwiki = "/home/jeremy/OneDrive/vimwiki/"
+command! -nargs=1 NewWiki :execute ":e" vimwiki . strftime("%FT%T%z") . "-<args>.md"
+map <leader>x :NewWiki 
 
 " Markdown
 let g:mkdx#settings = { 'map': { 'prefix': '<leader><leader>' } }
 
+" Show Booksmarks on Startup
+let NERDTreeShowBookmarks=1
+au VimEnter *  NERDTree
 
+" FZF
+
+nnoremap <silent> <C-f> :GFiles<CR>
+nnoremap <silent> <Leader>f :Rg<CR>
 
 
 catch
