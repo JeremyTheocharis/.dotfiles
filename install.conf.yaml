@@ -5,6 +5,7 @@
     ~/.vimrc: vimrc
     ~/.vim: vim
     ~/.fonts: fonts
+    ~/.tmux.conf: tmux.conf
 
 - shell:
   - dconf load /org/gnome/terminal/legacy/profiles:/ < gnome-terminal-profiles.dconf

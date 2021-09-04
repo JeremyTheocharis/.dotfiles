@@ -1,9 +1,13 @@
 [user]
 	name = JeremyTheocharis
 	email = jt@umh.app
-	signingkey = 0xE79460B0310434E9
+	signingKey = 451D64910532C80FB02837B0E79460B0310434E9
 [credential "https://github.com"]
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
 [commit]
 	gpgsign = true
+[gpg]
+	program = gpg
+[tag]
+	forceSignAnnotated = true
