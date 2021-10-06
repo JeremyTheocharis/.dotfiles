@@ -16,6 +16,7 @@ call plug#begin()
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'altercation/vim-colors-solarized'
+Plug 'lifepillar/vim-solarized8'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'itchyny/lightline.vim'
@@ -64,12 +65,12 @@ nnoremap <silent> <leader> :<c-u>WhichKey  ','<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 syntax on
-let g:solarized_termcolors=16
-set t_Co=16 
+" let g:solarized_termcolors=256
+set t_Co=256
 set background=dark
-colorscheme solarized
-
-""""""""""""""""""""""""""""""
+colorscheme solarized8
+hi Normal guibg=NONE ctermbg=NONE
+"""""""""""""""""""""""""
 " => Personal changes
 """"""""""""""""""""""""""""""
 :set number
@@ -78,7 +79,7 @@ colorscheme solarized
 nmap <F3> a<C-R>=strftime("%FT%T%z")<CR> 
 
 " Quickly open a markdown buffer for scribble
-let g:vimwiki = "/home/jeremy/OneDrive/vimwiki/"
+let g:vimwiki = "/mnt/c/Users/JeremyTheocharis/OneDrive - UMH Systems GmbH/vimwiki"
 command! -nargs=1 NewWiki :execute ":e" vimwiki . strftime("%FT%T%z") . "-<args>.md"
 map <leader>x :NewWiki 
 

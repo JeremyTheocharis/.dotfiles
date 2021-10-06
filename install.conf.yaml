@@ -9,8 +9,8 @@
     ~/.zshrc: zshrc
     ~/.oh-my-zsh: oh-my-zsh
 
-- shell:
-  - dconf load /org/gnome/terminal/legacy/profiles:/ < gnome-terminal-profiles.dconf
-  - fc-cache -f -v
+    #- shell:
+    #- dconf load /org/gnome/terminal/legacy/profiles:/ < gnome-terminal-profiles.dconf
+    #- fc-cache -f -v
 
 
