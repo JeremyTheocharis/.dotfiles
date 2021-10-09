@@ -65,11 +65,12 @@ nnoremap <silent> <leader> :<c-u>WhichKey  ','<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 syntax on
-" let g:solarized_termcolors=256
+let g:solarized_termcolors=256
 set t_Co=256
 set background=dark
+let g:solarized_termtrans=1
 colorscheme solarized8
-hi Normal guibg=NONE ctermbg=NONE
+" hi Normal guibg=NONE ctermbg=NONE
 """""""""""""""""""""""""
 " => Personal changes
 """"""""""""""""""""""""""""""
@@ -136,3 +137,15 @@ augroup END
 
 catch
 endtry
+
+" COPY PASYE https://vi.stackexchange.com/questions/12376/vim-on-wsl-synchronize-system-clipboard-set-clipboard-unnamed
+"
+let s:clip = '/mnt/c/Windows/System32/clip.exe' 
+if executable(s:clip)
+        augroup WSLYank
+            autocmd!
+            autocmd TextYankPost * call system('echo '.shellescape(join(v:event.regcontents, "\<CR>")).' | '.s:clip)
+        augroup END
+end
+
+noremap "+p :exe 'norm a'.system('/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe -Command Get-Clipboard')<CR>
