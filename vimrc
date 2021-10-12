@@ -80,7 +80,7 @@ colorscheme solarized8
 nmap <F3> a<C-R>=strftime("%FT%T%z")<CR> 
 
 " Quickly open a markdown buffer for scribble
-let g:vimwiki = "/mnt/c/Users/JeremyTheocharis/OneDrive - UMH Systems GmbH/vimwiki"
+let g:vimwiki = "/mnt/c/Users/JeremyTheocharis/OneDrive - UMH Systems GmbH/vimwiki/"
 command! -nargs=1 NewWiki :execute ":e" vimwiki . strftime("%FT%T%z") . "-<args>.md"
 map <leader>x :NewWiki 
 
