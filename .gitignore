@@ -1,2 +1,3 @@
 # Ignore the installed plugins
 vim/plugged/**
+vim/temp_dirs/**

@@ -127,12 +127,14 @@ if [ $? -ne 0 ]; then
   setsid nohup socat UNIX-LISTEN:$GPG_AGENT_SOCK,fork EXEC:"$HOME/.ssh/wsl2-ssh-pageant.exe --gpg S.gpg-agent" &>/dev/null &
 fi
 
+alias vim="nvim"
+alias oldvim="\vim"
 
 # use Windows' git when working under C:\ drive
-function git() {
-  if $(pwd -P | grep -q "^\/mnt\/c\/*"); then
-    git.exe "$@"
-  else
-    command git "$@"
-  fi
-}
+# function git() {
+#   if $(pwd -P | grep -q "^\/mnt\/c\/*"); then
+#     git.exe "$@"
+#   else
+#     command git "$@"
+#   fi
+# }

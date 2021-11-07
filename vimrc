@@ -46,6 +46,9 @@ Plug 'liuchengxu/vim-which-key'
 " On-demand lazy load
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 
+" Github Copilot
+Plug 'github/copilot.vim'
+
 call plug#end()
 
 source ~/.vim/coc-default.vim
