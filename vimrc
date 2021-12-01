@@ -141,14 +141,16 @@ augroup END
 catch
 endtry
 
-" COPY PASYE https://vi.stackexchange.com/questions/12376/vim-on-wsl-synchronize-system-clipboard-set-clipboard-unnamed
-"
-let s:clip = '/mnt/c/Windows/System32/clip.exe' 
-if executable(s:clip)
-        augroup WSLYank
-            autocmd!
-            autocmd TextYankPost * call system('echo '.shellescape(join(v:event.regcontents, "\<CR>")).' | '.s:clip)
-        augroup END
-end
+" https://github.com/neovim/neovim/wiki/FAQ#how-to-use-the-windows-clipboard-from-wsl
+set clipboard=unnamedplus
 
-noremap "+p :exe 'norm a'.system('/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe -Command Get-Clipboard')<CR>
+" COPY PASYE https://vi.stackexchange.com/questions/12376/vim-on-wsl-synchronize-system-clipboard-set-clipboard-unnamed
+
+" if executable(s:clip)
+"         augroup WSLYank
+"             autocmd!
+"             autocmd TextYankPost * call system('echo '.shellescape(join(v:event.regcontents, "\<CR>")).' | '.s:clip)
+"         augroup END
+" end
+
+" noremap "+p :exe 'norm a'.system('/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe -Command Get-Clipboard')<CR>
