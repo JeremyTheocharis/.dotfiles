@@ -10,7 +10,8 @@
         "json",
         "css",
         "scss",
-        "go"
+        "go",
+        "rust"
     ],
     "languageserver": {
         "golang": {

@@ -10,6 +10,7 @@
     ~/.oh-my-zsh: oh-my-zsh
     ~/.config/nvim/init.vim: neovim
     ~/.config/lazygit/config.yaml: lazygit
+    ~/.p10k.zsh: p10k
     #- shell:
     #- dconf load /org/gnome/terminal/legacy/profiles:/ < gnome-terminal-profiles.dconf
     #- fc-cache -f -v
